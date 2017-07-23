@@ -1,0 +1,25 @@
+#container {
+  text-align: center;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 22px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.del {
+  display: none;
+}
+
+div.elem:hover .del {
+  display: inline;
+}
+
+div.hidden {
+  display: none;
+}
