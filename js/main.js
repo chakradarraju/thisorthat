@@ -18,7 +18,7 @@ function addoption() {
 }
 
 input.onkeypress = function(e) {
-  if (e.keyCode === 13) {
+  if (e.keyCode === 13 || e.keyCode === 10) {
     if (e.ctrlKey) {
       decide();
     } else {
@@ -30,7 +30,11 @@ input.onkeypress = function(e) {
 
 function decide() {
   var selected = options[Math.floor(Math.random() * options.length)];
-  result.innerHTML = selected.value();
+  result.innerHTML = '';
+  result.appendChild(document.createTextNode(selected.value() + ' '));
+  var startover = document.getElementById('startover');
+  result.appendChild(startover);
+  startover.focus();
   content.classList.add('hidden');
   result.classList.remove('hidden');
   controls.classList.add('hidden');
